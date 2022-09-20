@@ -1,2 +1,6 @@
-<h3>{{username}}'s To Do List</h3>
-<h6>{{itemcount}} Items</h6>
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  <span class="spacer"></span>
+  <span>{{username}}'s To Do List</span>
+  <span class="spacer"></span>
+  <mat-icon matBadge="{{ itemcount }}" matBadgeColor="accent">checklist</mat-icon>
+</mat-toolbar>

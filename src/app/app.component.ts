@@ -21,4 +21,8 @@ export class AppComponent {
   get itemcount(): number {
     return this.list.items.filter(item => !item.complete).length;
   }
+
+  get items(): readonly TodoItem[] {
+    return this.list.items;
+  } 
 }

@@ -1,3 +1,4 @@
+<!--Tool bar-->
 <mat-toolbar color="primary" class="mat-elevation-z3">
   <span class="spacer"></span>
   <span>{{username}}'s To Do List</span>
@@ -5,6 +6,7 @@
   <mat-icon matBadge="{{ itemcount }}" matBadgeColor="accent">checklist</mat-icon>
 </mat-toolbar>
 
+<!-- Input Field-->
 <div class="inputContainer">
   <mat-form-field class="fullWidth">
     <mat-label style="padding-left: 5px;" >New To Do</mat-label>
@@ -20,6 +22,7 @@
   </mat-form-field>
 </div>
 
+<!--Table for list items-->
 <div class="tableContainer">
   <table mat-table [dataSource]="items" class="mat-elevation-z3 fullWidth" >
     <ng-container matColumnDef="id">
@@ -45,4 +48,13 @@
     <tr mat-row *matRowDef="let row; columns: ['id', 'task', 'done'];" ></tr>
 
   </table>
+</div>
+
+<!--Slide Toggle to show completed Tasks-->
+<div class="toggleContainer">
+  <span class="spacer"></span>
+  <mat-slide-toggle [(ngModel)]="showComplete" >
+    Show Completed Items
+  </mat-slide-toggle>
+  <span class="spacer"></span>
 </div>

@@ -14,6 +14,8 @@ export class AppComponent {
     new TodoItem('Go to Cinema'),
   ]);
 
+  showComplete: boolean = false;
+
   get username(): string {
     return this.list.user;
   }
@@ -23,7 +25,7 @@ export class AppComponent {
   }
 
   get items(): readonly TodoItem[] {
-    return this.list.items.filter(item => !item.complete);
+    return this.list.items.filter(item => this.showComplete || !item.complete);
   } 
 
   addItem(itemTask: string) {
